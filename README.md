@@ -26,7 +26,7 @@ Due to the computational demand of our methods, almost all of our calculations a
 - Slurm job scheduling
 
 ### JDFTx
-JDFTx is the DFT software used by the Musgrave group to run grand canonical calculations under bias. This tutorial will borrow heavily from the tutorial found on the JDFTx website, [JDFTx](http://jdftx.org/Tutorials.html). Subjects include:
+JDFTx is the DFT software used by the Musgrave group to run grand canonical calculations under bias. This tutorial will borrow heavily from the tutorial found on the [JDFTx website](http://jdftx.org/Tutorials.html). Subjects include:
 - molecular calculations
 - bulk calculations
 - surface calculations
