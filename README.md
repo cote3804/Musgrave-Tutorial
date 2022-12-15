@@ -33,4 +33,9 @@ JDFTx is the DFT software used by the Musgrave group to run grand canonical calc
   - bias and solvation
   - analysis
 
-### Hight Throughput Computation
+### High Throughput Computation
+To study a large material space, it is necessary to automate large portions of the workflow. For this, the group uses gc_manager, a set of python scripts that automate job submission and monitoring. The entire workflow for using gc_manager will be presented.
+- bulk calculations
+- cutting and running surfaces
+- adding adsorbates
+- running NEB barriers
