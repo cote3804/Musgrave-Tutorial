@@ -19,5 +19,18 @@ Being comfortable in Python is the most useful skill one can have in the group. 
 - object oriented programming (barely)
 
 ### Remote Computing
-Due to the computational demand of our methods, almost all of our calculations 
+Due to the computational demand of our methods, almost all of our calculations are run on remote supercomputers. These computers use Unix operating systems and must be accessed through a remote terminal. This tutorial covers:
+- software for remote computing
+- file system navigation
+- BASH scripting
+- Slurm job scheduling
 
+### JDFTx
+JDFTx is the DFT software used by the Musgrave group to run grand canonical calculations under bias. This tutorial will borrow heavily from the tutorial found on the JDFTx website, [JDFTx](http://jdftx.org/Tutorials.html). Subjects include:
+- molecular calculations
+- bulk calculations
+- surface calculations
+  - bias and solvation
+  - analysis
+
+### Hight Throughput Computation
