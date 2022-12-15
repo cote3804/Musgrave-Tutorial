@@ -1,5 +1,7 @@
 <img src="/Pictures/Group_Logo.png" alt="Alt text">
+
 # Musgrave-Tutorial
+
 This tutorial is for recently joined members of the Musgrave group at CU Boulder working on the electrocatalysis team. After this tutorial, students should have enough resources to start learning on their own and contributing to sicence done in the group. This tutorial will be divided into 4 sections:
 1. Python
 2. Remote Computing
