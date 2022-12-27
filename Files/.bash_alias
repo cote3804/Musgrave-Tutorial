@@ -1,0 +1,87 @@
+
+
+############################# Navigation #####################################
+
+alias cllus='cd /scratch/summit/$USER/' 
+alias cllas='cd /scratch/alpine/$USER/'
+alias clpro='cd /projects/cote3804/'
+alias cdu='cd ..' 
+alias cduu='cd ../../' 
+alias cduuu='cd ../../../' 
+alias cduuuu='cd ../../../../' 
+alias clscripts='cd /home/$USER/bin/scripts/' 
+alias bshrc='nano ~/.bashrc' 
+alias cbshrc='cat ~/.bashrc' 
+alias sbshrc='source ~/.bashrc' 
+alias memcheck='du -hs *| sort -n' 
+alias save='rm /home/$USER/bin/scripts/savedpath; pwd >> /home/$USER/bin/scripts/savedpath' 
+alias back='temp=$(cat /home/$USER/bin/scripts/savedpath); cd $temp' 
+alias fconverge='grep -n FORCES: OUTCAR; echo ""; tail OSZICAR; echo ""; temp="$(grep -c F= OSZICAR)"; echo OSZICAR steps = $temp; echo""' 
+alias good='head KPOINTS; head POSCAR; grep PAW POTCAR; grep MAGMOM INCAR; grep ISPIN INCAR; grep ISIF INCAR; grep EDIFF* INCAR; grep NPAR INCAR'
+alias cleanall='rm AECCAR*; rm *.dat; rm *.log; rm *.err; rm *.out; rm CHG; rm CHGCAR*; rm CONTCAR; rm DOSCAR; rm EIGENVAL; rm IBZKPT; rm OSZICAR; rm OUTCAR; rm PCDAT; rm PROCAR; rm REPORT; rm vasprun.xml; rm WAVECAR; rm XDATCAR'
+alias watchqmw='watch squeue -u $USER' 
+alias newrun='find -type f -not -name ""POSCAR"" -delete'
+alias check_hours='/projects/frahm/shared/suacct'
+
+########################## JDFT Commands #####################################
+alias sbatch='sbatch --export=NONE'
+
+alias jc2p='cp jdft.lattice init.lattice; cp jdft.ionpos init.ionpos'
+alias jc2pall='find . -name jdft.ionpos -execdir sh -c " pwd; cp jdft.lattice init.lattice; cp jdft.ionpos init.ionpos; replaceIonPosLine.py" \;'
+alias c2pall='find . -name CONTCAR -execdir sh -c " pwd; cp CONTCAR POSCAR" \;'
+alias modjtemp='nano ~/bgw_scripts/dir_shell/jdft/1-scf/in'
+alias jrunall='find . -name submit.sh -execdir sh -c " pwd ; sbatch --export=NONE submit.sh " \;'
+alias p2jall='find . -name POSCAR -execdir sh -c " pwd ; pos2jdftx.py ; addDos.py" \;'
+alias make_in_all='find . -name POSCAR -execdir sh -c " pwd ; make_in.py" \;'
+alias PostjdftxALL='find . -name jdft.ionpos -execdir sh -c " pwd ; createXSF out XSF.xsf jdft.nbound  ; jdft2pos.py " \;'
+alias jsetall='find . -name poscars -execdir sh -c "pwd  ; jsetup.py POSCAR --skipLatt --params 8 36 standard -f gga-beefvdw -c 35 -k 2 2 1 --elecalgo electronic-minimize --oneagle" \;'
+alias jsetall_aziz='find . -name POSCAR -execdir sh -c "pwd ; jsetup_aziz.py POSCAR --oneagle -k 2 2 1 -c 35 -f gga-beefvdw --skipIons --skipLatt --params 8 36 standard --elecalgo electronic-minimize" \;'
+alias jsetall_aziz_nospin='find . -name POSCAR -execdir sh -c "pwd ; jsetup_aziz_nospin.py POSCAR --oneagle -k 2 2 1 -c 35 -f gga-beefvdw --skipIons --skipLatt --params 4 36 standard --elecalgo electronic-scf" \;'
+alias j_removeBotLayer='find . -name poscars -execdir sh -c "pwd  ; remove_layers.py" \;'
+alias weirdcpin='find . -name relaxions -execdir sh -c "pwd ; cp in relaxions/" \;'
+alias remove_spinFiles='find . -name POSCAR.spin -execdir sh -c "rm POSCAR.spin" \;'
+alias beef_setup='make_beef; cp_beef; j_2step.py'
+alias jcheckI='grep IonicMinimize out'
+alias jcheckE='grep ElecMinimize out'
+alias jcheckL='grep LatticeMinimize out'
+alias jcheckF='grep "F =" out'
+alias jcheckG='grep "G =    " out'
+alias jcheckN='grep nElec out'
+alias jcheckDoneAll='grep "Done!" */out'
+alias jgrabE='tail -n 1 */jdft.Eco*'
+alias jgrabG='grep "G =" */jdft.Eco*'
+alias jgrabF='grep "F =" */jdft.Eco*'
+alias jFreqCheck='grep Frequency out'
+alias temp_in='cp /home/abal2132/bin/templates/in in_temp'
+alias temp_inputs='cp ~/bin/templates/inputs_temp inputs'
+alias temp_test='cp /home/abal2132/bin/templates/test.sh test.sh'
+alias temp_sub='cp /home/abal2132/bin/templates/submit.sh submit.sh_temp'
+alias rm_ION='find . -name RelaxIons -execdir sh -c "pwd ; rm -r RelaxIons" \;'
+alias rm_slurm='find . -name in -execdir sh -c "pwd ; rm slurm*" \;'
+alias jcheckIall='find . -name out -execdir sh -c "pwd; grep IonicMinimize out" \;'
+alias jcheckFall='find . -name out -execdir sh -c "pwd; jcheckF" \;'
+alias jcheckoutall='find . -name out -execdir sh -c "pwd ; tail -n 1 out" \;'
+alias j2pall='find . -name jdft.ionpos -execdir sh -c " pwd ; j2p.py " \;'
+alias jFreqAnal='python ~/bin/scripts/jFreqAnal.py'
+alias jcleanup='find . -name in -execdir sh -c "pwd; rm jdft* slu*" \;'
+alias EcompCheck='find . -name jdft.Ecomponents -execdir sh -c "pwd; tail -n 1 jdft.Ecomponents" \;'
+
+alias loopseldyn='find . -name POSCAR -execdir sh -c "add_seldyn.py -btm_fix 2 -f POSCAR" \; '
+alias jBaderall='source /curc/sw/anaconda/default; conda activate myoctave; find . -name out -execdir sh -c "pwd; jbader.py" \;'
+alias jDOSall='find . -name jdft.dosDn -execdir sh -c "pwd; jdosParse.py --fd DOS" \;'
+alias jDOScheck='find . -name jdft.dosDn -execdir sh -c "pwd; du DOS_all_sites.json" \;'
+alias dosjdft='source /curc/sw/anaconda/default;conda activate myoctave'
+##############################################################################
+
+################################ ALPINE ######################################
+#alias alpine='module load slurm/alpine'
+#alias summit='module load slurm/summit'
+
+############################# Slurm #####################################
+alias qmelong='echo ""; squeue -u $USER -o "%.8i %.8u %.9q %.9P %12j %.6D %.6C %.12l %.8M %.2t %.20S" | sort -k 1 -n; echo ""'
+alias qlong='echo ""; squeue -o "%.8i %.8u %.9q %.9P %12j %.6D %.6C %.12l %.8M %.2t %.20S %.10N " | sort -k 1 -n; echo ""'
+alias qme="squeue -u $USER" # checks status of your jobs 
+alias snum="squeue -u $USER -h -t pending,running -r | wc -l && echo 'jobs in queue'" #checks number of jobs in queue
+
+alias lihu="squeue -u lihu9680 -h -t pending,running -r | wc -l && echo 'jobs in queue'" #checks number of jobs in queue
+
