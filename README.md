@@ -39,3 +39,26 @@ To study a large material space, it is necessary to automate large portions of t
 - cutting and running surfaces
 - adding adsorbates
 - running NEB barriers
+
+
+# Lesson Order
+
+<ol type="1">
+  <li>Python</li>
+  <ol type="1">
+    <li>Anaconda</li>
+    <li>Python</li>
+    <li>Functions_and_Objects</li>
+  </ol>
+  <li>Remote Computing</li>
+  <ol type="1">
+    <li>Alpine_Setup</li>
+    <li>Basic_Bash_Commands</li>
+    <li>Bash_Scripting</li>
+    <li>Job_Scheduling</li>
+  </ol>
+  <li>JDFTx</li>
+  <ol type="1">
+    <li>JDFTx</li>
+  </ol>
+</ol>
