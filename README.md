@@ -59,6 +59,7 @@ To study a large material space, it is necessary to automate large portions of t
   </ol>
   <li>JDFTx</li>
   <ol type="1">
-    <li>JDFTx</li>
+    <li>N2</li>
+    <li>Pt_111</li>
   </ol>
 </ol>
