@@ -1,0 +1,4 @@
+pkgs_dirs:
+  - /projects/$USER/.conda_pkgs
+envs_dirs:
+  - /projects/$USER/software/anaconda/envs
