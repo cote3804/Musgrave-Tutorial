@@ -61,9 +61,11 @@ To study a large material space, it is necessary to automate large portions of t
   <ol type="1">
     <li>N2</li>
     <li>Pt_111</li>
+    <li>bias</li>
   </ol>
   <li>Atomic Simulation Environment</li>
   <ol type="1">
     <li>Structure_Manipulation</li>
+    <li>Calculator</li>
   </ol>
 </ol>
